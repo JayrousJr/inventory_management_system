@@ -1,0 +1,75 @@
+{
+    "name": "bezhansalleh/filament-panel-switch",
+    "description": "Easily Switch between your Filament Panels",
+    "keywords": [
+        "bezhanSalleh",
+        "filament",
+        "panel-switch",
+        "filament-panel-switch",
+        "panel-changer",
+        "panel-navigation"
+    ],
+    "homepage": "https://github.com/bezhansalleh/filament-panel-switch",
+    "support": {
+        "issues": "https://github.com/bezhansalleh/filament-panel-switch/issues",
+        "source": "https://github.com/bezhansalleh/filament-panel-switch"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bezhan Salleh",
+            "email": "bezhan_salleh@yahoo.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^3.0",
+        "spatie/laravel-package-tools": "^1.15.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "BezhanSalleh\\PanelSwitch\\": "src/",
+            "BezhanSalleh\\PanelSwitch\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BezhanSalleh\\PanelSwitch\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BezhanSalleh\\PanelSwitch\\PanelSwitchServiceProvider"
+            ],
+            "aliases": {
+                "PanelSwitch": "BezhanSalleh\\PanelSwitch\\Facades\\PanelSwitch"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
