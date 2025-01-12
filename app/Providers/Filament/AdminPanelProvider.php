@@ -30,7 +30,6 @@ class AdminPanelProvider extends PanelProvider
             ->path('shop')
             ->login()
             ->favicon(asset('/storage/images/logo/logo.svg'))
-            ->sidebarCollapsibleOnDesktop()
             ->databaseNotifications()
             ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
             ->globalSearch(true)
@@ -42,6 +41,7 @@ class AdminPanelProvider extends PanelProvider
                 'warning' => Color::Orange,
                 'gray' => Color::Neutral,
             ])
+            ->sidebarCollapsibleOnDesktop()
             // ->domain('shop')
             // ->renderHook(
             //     'panels::global-search.before',
